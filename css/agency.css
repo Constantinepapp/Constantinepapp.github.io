@@ -900,3 +900,6 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   display: none;
 }
 
+.fa-c_sharp{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
