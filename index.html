@@ -554,10 +554,10 @@
                   Comic Sans MS, sans-serif;"><strong>Functionality</strong></span></p>
                 <p style="text-align: center;"><span style="font-family: 
                   Comic Sans MS, sans-serif;">Users can create an account and login. They can log their running activity data either as a raw input or as csv. After every input their aerobic fitness is estimated using their input data and also their estimated stress score of the activity. The average aerobic fitness of the last 3 activities is calculated and then an estimation of their running paces in different heart rate zones is also calculated.In the training load page users can see an estimated value of their fatigue over time and use this graph to plan their future activities. Other tools like build in heart rate monitor and cooper test Vo2max estimaton is available in the app</span></p></p>
-              <h1 id="documentation">Documentation</h1>
+              <h3 id="documentation">Documentation</h3>
               <h2 id="table-of-content">Table of content</h2>
-              <ul>
-              <li><strong>Functionality</strong><ol>
+              <ul style="list-style-type:none">
+              <li><strong>Functionality</strong>
               <li><a href="#Disclaimer">Disclaimer</a></li>
               <li><a href="#From-vanilla-javaScript-to-React">From vanilla javaScript to React</a></li>
               <li><a href="#The-app">The app</a></li>
@@ -565,25 +565,26 @@
               <li><a href="#Fitness-Fatigue">Fitness-Fatigue</a></li>
               <li><a href="#Running-Program">Running Program</a></li>
               <li><a href="#Training-Zones">Training Zones</a></li>
-              </ol>
+              
               </li>
               </ul>
-              <ul>
-              <li><strong>Code implementation</strong><ol>
-              <li><a href="#Stack">Stack</a><ol>
+              <ul style="list-style-type:none">
+              <li><strong>Code implementation</strong>
+              <ul style="list-style-type:none">
+              <li><a href="#Stack">Stack</a>
               <li><a href="#Back-end">Back end</a></li>
               <li><a href="#Front-end">Front end</a></li>
               <li><a href="#Progressive-Web-App-and-Play-store">Progressive Web App and Play store</a></li>
               <li>Strava external API</li>
-              </ol>
+              
               </li>
               <li>Function</li>
-              </ol>
+              </ul>
               </li>
               </ul>
-              <h2 id="disclaimer">Disclaimer</h2>
+              <h3 id="Disclaimer">Disclaimer</h3>
               <p>Leading pace is created,owned and maintained by Konstantinos Pappas. </p>
-              <h1 id="from-vanilla-javascript-to-react">From vanilla javaScript to React</h1>
+              <h1 id="From-vanilla-javaScript-to-React">From vanilla javaScript to React</h1>
               <ul>
               <li>Neither the front or the back end has any &quot;memory&quot; or state which slows down the performance of the app when user data reach the thousands, as the same processes have to run all over again as the user browses throught the web app.</li>
               <li>Too many processes are controlled and run on the backend server which puts too much strain on the server </li>
@@ -591,34 +592,34 @@
               <li>the lack of third party libraries made the developement  hard as in most cases custom code had to be written to solve problems that are easily and better solved by well known libraries </li>
               </ul>
               <p>In the version 3 of the app the whole front end was rewriten using react js to solve all of the above problems. The backend became a simple CRUD REST API as most of the proccesses are now done on the front end. Using state and third party libraries also ensured that all the calculations the app needs are only calculated when input data are changed, which increases the app performance tenfold.</p>
-              <h2 id="the-app">The app</h2>
+              <h3 id="The-app">The app</h3>
               <p>This is the version 3.3.2 of the Leading Pace Running analytics app. </p>
               <p>Leading pace is a running metrics and analytics app. The app collects your training data, calculates your VO2max running performance and generates a personalized running program depending on your fitness, fatigue levels and current training.</p>
               <p>The app currently supports imports using the strava api.</p>
-              <h2 id="running-index-vo2max">Running Index-VO2max</h2>
+              <h3 id="Running-Index-VO2max">Running Index-VO2max</h3>
               <img class="img-fluid d-block mx-auto" src="img/portfolio/fitness.png" alt="">
               <p>VO2 max (also maximal oxygen consumption, maximal oxygen uptake, peak oxygen uptake or maximal aerobic capacity) is the maximum rate of oxygen consumption measured during incremental exercise. VO2max is only measured in labs using using special equipment. However there are various ways to get a rough estimation of Vo2max with maximum or submaxial tests. In this app VO2max is estimated using submaxial methods using your past activities data (speed,heart rate) and elevation changes in order to predict your performance in maximal tests or workouts.</p>
               <p>Both VO2max and Performance idex are calculated using your speed,elevation and heart rate data.Higher Performance index means that you are running faster in the same heart rate zone or that you have a lower heart rate in the same speed.</p>
               <p>Heart rate deviations may appear due to other reasons as rest and nutrition changes, stress or even temperature changes so the app uses a weighted average of your last 10 activities to meassure your index</p>
-              <h2 id="fitness-fatigue">Fitness-Fatigue</h2>
+              <h3 id="Fitness-Fatigue">Fitness-Fatigue</h3>
               <img class="img-fluid d-block mx-auto" src="img/portfolio/load.png" alt="">
               <p>Raw stress (fatigue) is the raw stress accumulation from your past activities not taking into account your fitness levels. it is the linked with the activities stress. It represents your activity stress levels from the past 10-15 days
               Fitness is an indication of the cumulative effects that training has had over time. It represents the activity stress levels from the past 2 months.Both fitness and raw stress are weighted average values of your past activities stress scores
               Perceived stress (form) is the difference between raw stress and fitness. It represents your actual fatigue levels taking into account not only the raw strees but also your fitness. As your fitness rises you have to train harder to keep perceived stress in the same negative value</p>
-              <h2 id="running-program">Running Program</h2>
+              <h3 id="Running-Program">Running Program</h3>
               <img class="img-fluid d-block mx-auto" src="img/portfolio/program.png" alt="">
               <p>Leading pace takes into account your VO2max estimation heart rate zones,running paces and current fatigue-fitness from the training load page.Using this data it calculates the target stress score you need to achieve in the next month in order your form to be consistent to form target value ( -10 by default ). The accuracy is higher for the first and second week and drops a little for the last two weeks. </p>
               <p>The estimation of the second,third and forth week will only be accurate if you achive your goal in the last week. However small deviations (&lt;10%) in your last weeks goal won&#39;t be a problem.</p>
               <p>As your VO2max and your running paces change the estimated paces and distances for future workouts will also be recalculated to your current aerobic fitness so it is normal your workout&#39;s pace and distance to change. Tss will stay the same</p>
               <p>This formula is based on fitness-fatigue curve which is based on scientific stats but it has it&#39;s flaws. So follow the program but listen to your body needs. It is adviced after every monthly program to have a &quot;lighter&quot; week to avoid injury before you start a new months program</p>
               <p>If you are a begiener in running and you are not used to run for 10 or more minutes straight it is adviced to run-walk on your first weeks. In order to stay in the correct zones run at a little higher speed than your goal to counterbalance your walking paces.</p>
-              <h2 id="training-zones">Training Zones</h2>
+              <h3 id="Training-Zones">Training Zones</h3>
               <p>Training zones in this app are calculated using the karvonen formula.The Karvonen Formula is a mathematical formula that helps you determine your target heart rate (HR) training zone. The formula uses maximum and resting heart rate with the desired training intensity to get a target heart rate.Target Heart Rate = [(max HR − resting HR) × %Intensity] + resting HR example</p>
               <p>Training speeds in each zone are calculated using your weighted average VO2max from your last 10 activities</p>
-              <h1 id="code-implementation">Code implementation</h1>
-              <h2 id="stack">Stack</h2>
+              <h3 id="code-implementation">Code implementation</h3>
+              <h3 id="Stack">Stack</h3>
               <p>The app consists of a completely seperated and language agnostic front and back end(REST API) deployed on different servers and communicating throught cross origin requests. </p>
-              <h2 id="back-end">Back end</h2>
+              <h3 id="Back-end">Back end</h3>
               <ul>
               <li>Python(flask) REST api </li>
               <li>MySQL database</li>
@@ -626,10 +627,10 @@
               <li>Bcrypt (hash encryption) </li>
               <li>Json web token authentication.</li>
               </ul>
-              <h2 id="front-end">Front end</h2>
+              <h3 id="Front-end">Front end</h3>
               <p>The front end consist of React-Redux application using React-Router for navigation and Reactstrap framework for styling components</p>
               <p>The app uses mostly Redux-Store for state management  as well as local component state and local storage for some general settings. Most functions use custom memoization to keep the app&#39;s performance at the maximum. Most proccesses happen on the front end so the backend api handles only some basic CRUD operations. API calls are done using AXIOS and promises.</p>
-              <h2 id="progressive-web-app-and-play-store">Progressive-Web-App-and-Play-store</h2>
+              <h3 id="Progressive-Web-App-and-Play-store">Progressive-Web-App-and-Play-store</h3>
               <p>The app is a progressive web app that uses service workers for precaching to user&#39;s browser. You can download it in any device (pc-tablet-android-ios device). It is also possible to download it as a native android app (throught a web view ) from the play store.</p>
               
                
@@ -667,7 +668,7 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">AteThat</h2>
+                <h3 class="text-uppercase">AteThat</h3>
                 <p class="item-intro text-muted">A vanilla Javascript front-end with a Flask REST api backend</p>
                 <p class="item-intro text-muted">Flask,Javascript,Sqlite,Bootstrap,Jwt Authentication,Chartjs</p>
                 <img class="img-fluid d-block mx-auto" src="img/portfolio/atehome.png" alt="">
@@ -719,7 +720,7 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">PokerHUD</h2>
+                <h3 class="text-uppercase">PokerHUD</h3>
                 <p class="item-intro text-muted">Windows forms app</p>
                 <img class="img-fluid d-block mx-auto" src="img/portfolio/poker.png" alt="">
                 
@@ -756,7 +757,7 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">InstaScraper</h2>
+                <h3 class="text-uppercase">InstaScraper</h3>
                 <p class="item-intro text-muted">Python console app</p>
                 <p class="item-intro text-muted">Selenium web driver, Sqlite3</p>
              
@@ -793,7 +794,7 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">AteThat</h2>
+                <h3 class="text-uppercase">AteThat</h3>
                 <p class="item-intro text-muted">A vanilla Javascript front-end with a Flask REST api backend</p>
                 <p class="item-intro text-muted">Flask,Javascript,Sqlite,Bootstrap,Jwt Authentication,Chartjs</p>
                 <img class="img-fluid d-block mx-auto" src="img/portfolio/atehome.png" alt="">
