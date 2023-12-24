@@ -179,12 +179,23 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  position: relative;
   
 }
 
+.button-more{
+  width: 50%;
+}
+
 header.masthead .intro-text {
-  padding-top: 150px;
+  background-color: rgba(0,0,0,0.1);
+  padding-top: 250px;
   padding-bottom: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 header.masthead .intro-text .intro-lead-in {
